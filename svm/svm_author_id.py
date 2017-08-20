@@ -24,8 +24,17 @@ features_train, features_test, labels_train, labels_test = preprocess()
 #########################################################
 ### your code goes here ###
 
+#this is slower :-(-it takes around 10 mins
 from sklearn.svm import SVC
-clf = SVC(C = 1.0,gamma = 'auto',kernel='linear')#
+clf = SVC(kernel='linear')
+
+#this is faster but inaccurate
+#from sklearn.svm import LinearSVC
+#clf=LinearSVC()
+
+# train a smaller data set
+features_train = features_train[:len(features_train)//100] 
+labels_train = labels_train[:len(labels_train)//100] 
 
 t0 = time()
 clf.fit(features_train, labels_train)

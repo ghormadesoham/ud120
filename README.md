@@ -1,2 +1,2 @@
 # ud120
-Intro to Machine Learing Udacity course
+Intro to Machine Learning Udacity course

@@ -26,7 +26,7 @@ features_train, features_test, labels_train, labels_test = preprocess()
 
 #this is slower :-(-it takes around 10 mins
 from sklearn.svm import SVC
-clf = SVC(kernel='linear')
+clf = SVC(kernel='rbf', C = 10000)#rbf or linear
 
 #this is faster but inaccurate
 #from sklearn.svm import LinearSVC

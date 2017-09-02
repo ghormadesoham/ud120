@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 """ lecture and example code for decision tree unit """
-
+import time
 import sys
 from class_vis import prettyPicture, output_image
 from prep_terrain_data import makeTerrainData
@@ -19,13 +19,19 @@ features_train, labels_train, features_test, labels_test = makeTerrainData()
 ### happens--fill in this function in the file 'classifyDT.py'!
 clf = classify(features_train, labels_train)
 
+#find the predicted labels based on test data
+pred=clf.predict(features_test)
 
-
-
-
-
+#Find the accuracy by comparing output labels/prediction to expected labels for test data
+from sklearn.metrics import accuracy_score
+accuracy = accuracy_score(labels_test,pred)
+#print the accuracy
+print("accuracy:",accuracy , "%")
+time.sleep(30)# to note down the accuracy
 
 #### grader code, do not modify below this line
 
 prettyPicture(clf, features_test, labels_test)
 output_image("test.png", "png", open("test.png", "rb").read())
+
+

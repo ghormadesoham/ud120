@@ -49,11 +49,11 @@ print("The people who are poi:",count)# 18
 print("Total value of stock for James Prentice: ",enron_data["PRENTICE JAMES"]["total_stock_value"])#case sensitive!
 
 #How many email messages do we have from Wesley Colwell to persons of interest?
-print("email messages do we have from Wesley Colwell to  persons of interest : ", enron_data["COLWELL WESLEY"]["from_this_person_to_poi"])#case sensitive!
+print("email messages do we have from Wesley Colwell to  persons of interest : ", enron_data["COLWELL WESLEY"]["from_this_person_to_poi"])#case sensitive! 11
 
 #What’s the value of stock options exercised by Jeffrey K Skilling?
 print("the value of stock options exercised by Jeffrey K Skilling : ", 
-      enron_data["SKILLING JEFFREY K"]["exercised_stock_options"])#case sensitive!
+      enron_data["SKILLING JEFFREY K"]["exercised_stock_options"])#case sensitive!#19250000
 
 
 

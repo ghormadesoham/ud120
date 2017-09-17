@@ -17,6 +17,16 @@
 
 import pickle
 
-enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
+file_path="../final_project/final_project_dataset_unix.pkl"
+file_handler = open(file_path, "rb") 
+enron_data = pickle.load(file_handler, fix_imports=True)
+file_handler.close()
+
+
+#enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "rb"),fix_imports = True)
+#Print the length of th dictionary i.e the number of keys in the dictionary
+
+print ("The number of keys:", len(enron_data))
+
 
 

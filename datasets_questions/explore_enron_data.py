@@ -22,11 +22,20 @@ file_handler = open(file_path, "rb")
 enron_data = pickle.load(file_handler, fix_imports=True)
 file_handler.close()
 
-
-#enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "rb"),fix_imports = True)
 #Print the length of th dictionary i.e the number of keys in the dictionary
+print ("The number of people in the dataset:", len(enron_data)) #146
 
-print ("The number of keys:", len(enron_data))
+#print the number of features
+print ("The number of features in the dataset:", len(enron_data["SKILLING JEFFREY K"]))#21
 
+#print people who are poi-persons of interest
+count = 0
+#loop over dictionary
+for person_name in enron_data:#person_name is the key of type string here
+ if enron_data[person_name]["poi"] == 1:
+    count += 1
+    
+print("The people who are poi:",count)# 18
 
+    
 

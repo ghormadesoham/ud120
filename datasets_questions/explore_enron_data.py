@@ -37,5 +37,27 @@ for person_name in enron_data:#person_name is the key of type string here
     
 print("The people who are poi:",count)# 18
 
+
+#Like any dict of dicts, individual people/features can be accessed like so:
+#
+#enron_data["LASTNAME FIRSTNAME"]["feature_name"]
+#or, sometimes 
+#enron_data["LASTNAME FIRSTNAME MIDDLEINITIAL"]["feature_name"]
+#
+#What is the total value of the stock belonging to James Prentice?
+
+print("Total value of stock for James Prentice: ",enron_data["PRENTICE JAMES"]["total_stock_value"])#case sensitive!
+
+#How many email messages do we have from Wesley Colwell to persons of interest?
+print("email messages do we have from Wesley Colwell to  persons of interest : ", enron_data["COLWELL WESLEY"]["from_this_person_to_poi"])#case sensitive!
+
+#What’s the value of stock options exercised by Jeffrey K Skilling?
+print("the value of stock options exercised by Jeffrey K Skilling : ", 
+      enron_data["SKILLING JEFFREY K"]["exercised_stock_options"])#case sensitive!
+
+
+
+
+
     
 

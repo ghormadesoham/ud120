@@ -1,0 +1,20 @@
+#!/usr/bin/env python
+"""\
+convert dos linefeeds (crlf) to unix (lf)
+Running this python file creates a new pickle file with line endings fixed.
+usage: dos2unix.py <input> <output>
+"""
+#enron_data = "../final_project/final_project_dataset.pkl"
+original = "../final_project/final_project_dataset.pkl"
+destination = "../final_project/final_project_dataset_unix.pkl"#append unix
+
+content = ''
+outsize = 0
+with open(original, 'rb') as infile:
+  content = infile.read()
+with open(destination, 'wb') as output:
+  for line in content.splitlines():
+    outsize += len(line) + 1
+    output.write(line + str.encode('\n'))
+
+print("Done. Saved %s bytes." % (len(content)-outsize))

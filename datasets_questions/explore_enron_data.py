@@ -55,9 +55,48 @@ print("email messages do we have from Wesley Colwell to  persons of interest : "
 print("the value of stock options exercised by Jeffrey K Skilling : ", 
       enron_data["SKILLING JEFFREY K"]["exercised_stock_options"])#case sensitive!#19250000
 
+#What’s the value of total payments to Jeffrey K Skilling?
+print("the value of total payments to Jeffrey K Skilling : ", 
+      enron_data["SKILLING JEFFREY K"]["total_payments"])#case sensitive!#19250000
 
+#What’s the value of total payments to Kenneth Lay?
+print("the value of total payments to Kenneth Lay : ", 
+      enron_data["LAY KENNETH L"]["total_payments"])#case sensitive!#19250000
 
+#What’s the value of total payments to Andrew Fastow?
+print("the value of total payments to Andrew Fastow : ", 
+      enron_data["FASTOW ANDREW S"]["total_payments"])#case sensitive!#19250000
 
-
+#print people who have a salary
+count = 0
+#loop over dictionary
+for person_name in enron_data:#person_name is the key of type string here
+ if enron_data[person_name]["salary"] != 'NaN':
+    count += 1
+print("# of  salaried people:",count)#  95  
     
+#print people who have an email address
+count = 0
+#loop over dictionary
+for person_name in enron_data:#person_name is the key of type string here
+ if enron_data[person_name]["email_address"] != 'NaN':
+    count += 1
+print("# of people who have email addresses:",count)# 111
 
+  #print people who have total payments as NaN
+count = 0
+#loop over dictionary
+for person_name in enron_data:#person_name is the key of type string here
+ if enron_data[person_name]["total_payments"] == 'NaN':
+    count += 1
+print("# of  people who have total payments as NaN:",count)#  21   
+
+print("% people who have total payments as NaN:",count*100/146)#  14.38  
+
+#print people who are poi-persons of interest
+count = 0
+#loop over dictionary
+for person_name in enron_data:#person_name is the key of type string here
+ if enron_data[person_name]["poi"] == 1 and enron_data[person_name]["total_payments"] == 'NaN':
+    count += 1
+print("# of  poi with NaN:",count)#   
